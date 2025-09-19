@@ -1,0 +1,94 @@
+  body {
+    background-color: #928989;
+    font-family: "Noto Sans", serif;
+  }
+
+/*bordes y margenes*/
+  .wiwi {
+    width: 90%; 
+    margin: 0 auto; 
+  }
+  .boton {
+    position: relative;
+    padding: 10px;
+    border: 2px solid black;
+    background-color: #f0eeed;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7); 
+  }
+  .caja {
+    position: relative;
+    padding: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+    border: 2px solid black;
+    background-color: #f0eeed;
+  }
+  .caja::before,
+  .caja::after {
+    content: '';
+    position: absolute;
+    top: -10px; /* Desplazamiento superior */
+    left: -10px; /* Desplazamiento izquierdo */
+    width: 100%;
+    height: 100%;
+    background-color: #d6d6d6;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+    border: 2px solid black;
+    z-index: -1; /*mueve esta caja destras de la otra*/
+  }
+  
+button {
+  max-width: 40%; 
+  height: auto;
+  position: relative;
+  padding: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7); 
+  border: 2px solid black;
+  background-color: #ffffff;
+}
+
+button:hover {
+  background-color: #ffffff; 
+  transform: scale(1.05);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7); 
+}
+
+button:active {
+  background-color: #707070; 
+  transform: scale(0.95);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7); 
+}
+
+.emoji {
+  font-family: 'Noto Color Emoji', sans-serif;
+}
+
+.social-button{
+  /*previene que el boton se junte mucho a otro si la pantalla se redimenciona*/
+  margin-top: 10px;
+}
+
+.social-img{
+  float: left;
+  display: fle;
+  align-items: center;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.social-text{
+  display: grid;
+  position: relative;
+  align-items: center;
+}
+
+.music-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+.music {
+  margin-left: auto;
+}
+
