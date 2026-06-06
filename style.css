@@ -631,4 +631,113 @@ h1, h2, h3, h4 {
     border-top: 1px solid var(--md-sys-color-outline-variant);
     background-color: var(--md-sys-color-surface-container-low);
 }
+
+/* ==========================================================================
+   Countdown Styles (2085.html)
+   ========================================================================== */
+
+.countdown-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+    min-height: 50vh;
+}
+
+.countdown-card {
+    background-color: var(--md-sys-color-surface-container);
+    border-radius: 28px;
+    padding: 48px 36px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium), background-color var(--transition-medium);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.countdown-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.countdown-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.countdown-subtitle {
+    font-size: 1.1rem;
+    color: var(--md-sys-color-on-surface-variant);
+    margin-bottom: 36px;
+}
+
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 550px) {
+    .countdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
+
+.bloque-tiempo {
+    background-color: var(--md-sys-color-surface-container-high);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    padding: 20px 12px;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.bloque-tiempo:hover {
+    background-color: var(--md-sys-color-primary-container);
+    transform: scale(1.05);
+}
+
+.numero {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--md-sys-color-primary);
+    line-height: 1.1;
+    margin-bottom: 4px;
+    transition: color var(--transition-fast);
+}
+
+.bloque-tiempo:hover .numero {
+    color: var(--md-sys-color-on-primary-container);
+}
+
+.etiqueta {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--md-sys-color-on-surface-variant);
+    transition: color var(--transition-fast);
+}
+
+.bloque-tiempo:hover .etiqueta {
+    color: var(--md-sys-color-on-primary-container);
+}
+
+.final-message {
+    font-size: 1.75rem;
+    color: var(--md-sys-color-tertiary);
+    font-weight: 700;
+    margin-top: 24px;
+}
+
 
