@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/icon.webp">
     <title>Cuenta Regresiva a 2085</title>
     <!-- Google Fonts and Material Symbols -->
     <link rel="stylesheet"
@@ -39,8 +40,8 @@
         <section class="countdown-section">
             <div class="countdown-card">
                 <h1 class="countdown-title">Tiempo restante para 2085</h1>
-                <p class="countdown-subtitle">La cuenta regresiva hacia el futuro</p>
-                
+                <p class="countdown-subtitle">no seria gracioso tener un contador que dure hasta ese año (?)</p>
+
                 <div id="contador" class="countdown-grid">
                     <div class="bloque-tiempo">
                         <span id="dias" class="numero">00</span>
@@ -61,6 +62,13 @@
                 </div>
 
                 <h2 id="mensaje-final" style="display:none;" class="final-message">¡El futuro ha llegado!</h2>
+
+                <div style="margin-top: 36px; display: flex; justify-content: center;">
+                    <a href="https://www.youtube.com/watch?v=4t3IgrvlKMI" target="_blank" class="btn-primary" style="background-color: #d8232a; color: #ffffff; gap: 8px; box-shadow: 0 4px 12px rgba(216, 35, 42, 0.25);">
+                        <span class="material-symbols-outlined">music_note</span>
+                        <span>Escuchar "2085" de AJR</span>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
@@ -113,7 +121,7 @@
         const fechaObjetivo = new Date("Jan 1, 2085 00:00:00").getTime();
 
         // 2. Actualiza la cuenta cada 1 segundo (1000 milisegundos)
-        const intervalo = setInterval(function() {
+        const intervalo = setInterval(function () {
 
             // Obtener la fecha y hora de hoy
             const ahora = new Date().getTime();

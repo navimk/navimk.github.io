@@ -10,7 +10,7 @@
     --md-sys-color-on-primary: #FFFFFF;
     --md-sys-color-primary-container: #a7e2dd;
     --md-sys-color-on-primary-container: #092942;
-    
+
     --md-sys-color-secondary: #134859;
     --md-sys-color-on-secondary: #FFFFFF;
     --md-sys-color-secondary-container: #e2f2f1;
@@ -23,7 +23,7 @@
 
     --md-sys-color-background: #f4faf9;
     --md-sys-color-on-background: #092942;
-    
+
     --md-sys-color-surface: #f7fcfb;
     --md-sys-color-on-surface: #092942;
     --md-sys-color-surface-variant: #dbeceb;
@@ -40,7 +40,7 @@
     --accent-glow: rgba(35, 133, 122, 0.12);
     --card-shadow: 0 4px 16px rgba(35, 133, 122, 0.06);
     --card-shadow-hover: 0 16px 32px rgba(35, 133, 122, 0.15);
-    
+
     /* Animation Transitions */
     --transition-fast: 0.2s cubic-bezier(0.2, 0, 0, 1);
     --transition-medium: 0.35s cubic-bezier(0.2, 0, 0, 1);
@@ -53,7 +53,7 @@
     --md-sys-color-on-primary: #092942;
     --md-sys-color-primary-container: #12575a;
     --md-sys-color-on-primary-container: #63fabe;
-    
+
     --md-sys-color-secondary: #3eddb4;
     --md-sys-color-on-secondary: #092942;
     --md-sys-color-secondary-container: #134859;
@@ -66,7 +66,7 @@
 
     --md-sys-color-background: #092942;
     --md-sys-color-on-background: #eaf4f3;
-    
+
     --md-sys-color-surface: #0d324f;
     --md-sys-color-on-surface: #eaf4f3;
     --md-sys-color-surface-variant: #134859;
@@ -86,7 +86,9 @@
 }
 
 /* Reset and Base Styles */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -105,7 +107,10 @@ body {
     transition: background-color var(--transition-medium), color var(--transition-medium);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: var(--font-display);
     font-weight: 700;
     color: var(--md-sys-color-on-background);
@@ -142,6 +147,53 @@ h1, h2, h3, h4 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.top-app-bar__nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.nav-link {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--md-sys-color-on-surface-variant);
+    text-decoration: none;
+    padding: 6px 16px;
+    border-radius: 100px;
+    transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+.nav-link:hover {
+    background-color: var(--md-sys-color-surface-container-high);
+    color: var(--md-sys-color-on-surface);
+}
+
+.nav-link.active {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+}
+
+.nav-link:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 480px) {
+    .top-app-bar__container {
+        padding: 0 12px;
+    }
+
+    .nav-link {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    .top-app-bar__title {
+        font-size: 1.15rem;
+    }
+}
+
 
 /* Icon Button */
 .icon-button {
@@ -255,9 +307,11 @@ h1, h2, h3, h4 {
     0% {
         border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     }
+
     50% {
         border-radius: 40% 60% 70% 30% / 50% 60% 40% 70%;
     }
+
     100% {
         border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     }
@@ -373,7 +427,8 @@ h1, h2, h3, h4 {
     padding: 8px 18px;
     background-color: var(--md-sys-color-surface-container-low);
     border: 1px solid var(--md-sys-color-outline-variant);
-    border-radius: 12px; /* M3 chip style */
+    border-radius: 12px;
+    /* M3 chip style */
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--md-sys-color-on-surface);
@@ -414,7 +469,8 @@ h1, h2, h3, h4 {
 .project-card {
     background-color: var(--md-sys-color-surface-container-lowest);
     border: 1px solid var(--md-sys-color-outline-variant);
-    border-radius: 28px; /* M3 Extra Large shape */
+    border-radius: 28px;
+    /* M3 Extra Large shape */
     padding: 28px;
     display: flex;
     flex-direction: column;
@@ -526,19 +582,20 @@ h1, h2, h3, h4 {
     background-color: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
     border: none;
-    border-radius: 100px; /* Fully rounded pill shape for M3 buttons */
+    border-radius: 100px;
+    /* Fully rounded pill shape for M3 buttons */
     font-family: var(--font-body);
     font-size: 0.95rem;
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
 
 .btn-primary:hover {
     background-color: var(--md-sys-color-secondary);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     transform: translateY(-1px);
 }
 
@@ -553,7 +610,8 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(9, 41, 66, 0.5); /* Semi-transparent backdrop */
+    background-color: rgba(9, 41, 66, 0.5);
+    /* Semi-transparent backdrop */
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     display: flex;
@@ -573,7 +631,8 @@ h1, h2, h3, h4 {
 .modal-container {
     background-color: var(--md-sys-color-surface-container);
     border: 1px solid var(--md-sys-color-outline-variant);
-    border-radius: 28px; /* M3 extra-large rounded corners */
+    border-radius: 28px;
+    /* M3 extra-large rounded corners */
     width: 90%;
     max-width: 500px;
     max-height: 90vh;
@@ -612,10 +671,10 @@ h1, h2, h3, h4 {
 
 .modal-image {
     width: 100%;
+    height: auto;
     border-radius: 16px;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
     border: 1px solid var(--md-sys-color-outline-variant);
+    display: block;
 }
 
 .modal-desc {
@@ -740,4 +799,44 @@ h1, h2, h3, h4 {
     margin-top: 24px;
 }
 
-
+/* ==========================================================================
+   Projects CTA Card
+   ========================================================================== */
+.projects-cta-card {
+    background-color: var(--md-sys-color-surface-container);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: 28px;
+    padding: 36px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium), border-color var(--transition-medium), background-color var(--transition-medium);
+}
+
+.projects-cta-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover);
+    border-color: var(--md-sys-color-primary);
+}
+
+.cta-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cta-text {
+    font-size: 1.05rem;
+    color: var(--md-sys-color-on-surface-variant);
+    max-width: 500px;
+}
+
+@media (max-width: 768px) {
+    .projects-cta-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 28px;
+    }
+}

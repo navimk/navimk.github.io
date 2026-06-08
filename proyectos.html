@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/icon.webp">
+    <title>Proyectos - Navi</title>
+    <!-- Google Fonts and Material Symbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Aplicar tema inmediatamente para evitar parpadeo blanco/oscuro en la carga
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', initialTheme);
+    </script>
+</head>
+
+<body>
+    <!-- Top App Bar -->
+    <header class="top-app-bar">
+        <div class="top-app-bar__container">
+            <span class="top-app-bar__title">Navat</span>
+            <nav class="top-app-bar__nav">
+                <a href="index.html" class="nav-link">Sobre Mí</a>
+                <a href="proyectos.html" class="nav-link active">Proyectos</a>
+            </nav>
+            <button id="theme-toggle" class="icon-button" aria-label="Cambiar tema">
+                <span class="material-symbols-outlined">dark_mode</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Projects Section Header -->
+        <section class="hero-section"
+            style="margin-top: 16px; align-items: flex-start; flex-direction: column; gap: 12px;">
+            <h1 class="display-name">Mis Proyectos</h1>
+            <p class="headline-text">Aquí puedes explorar las herramientas, scripts y experimentos en los que he
+                trabajado para divertirme y pasar el rato.</p>
+        </section>
+
+        <!-- Projects Grid Section -->
+        <section class="projects-section">
+            <div class="projects-grid">
+                <!-- Card 1: NavOS -->
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <div class="project-icon-box">
+                            <span class="material-symbols-outlined">desktop_windows</span>
+                        </div>
+                        <h3>NavOS</h3>
+                    </div>
+                    <p class="project-desc">Una modificación personalizada de una ISO de Windows con el bloatware
+                        desactivado y optimizaciones para un mejor rendimiento.</p>
+                    <div class="project-card-footer">
+                        <a href="#" id="open-navos-modal" class="btn-text">Ver proyecto <span
+                                class="material-symbols-outlined">arrow_forward</span></a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Nav Tools -->
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <div class="project-icon-box">
+                            <span class="material-symbols-outlined">terminal</span>
+                        </div>
+                        <h3>Nav Tools</h3>
+                    </div>
+                    <p class="project-desc">Una utilidad ligera e interactiva en Batch (.cmd) para automatizar la configuración inicial de Windows, aplicando optimizaciones del sistema e instalación de apps vía Winget.</p>
+                    <div class="project-card-footer">
+                        <a href="#" id="open-navtools-modal" class="btn-text">Ver proyecto <span
+                                class="material-symbols-outlined">arrow_forward</span></a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Este sitio web -->
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <div class="project-icon-box">
+                            <span class="material-symbols-outlined">language</span>
+                        </div>
+                        <h3>Mi Sitio Web</h3>
+                    </div>
+                    <p class="project-desc">Esta misma página web personal, diseñada desde cero con HTML, CSS puro y
+                        siguiendo la guía de diseño de Material 3.</p>
+                    <div class="project-card-footer">
+                        <a href="https://github.com/navimk/navimk.github.io" class="btn-text">Ver código <span
+                                class="material-symbols-outlined">arrow_forward</span></a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Próximamente -->
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <div class="project-icon-box">
+                            <span class="material-symbols-outlined">construction</span>
+                        </div>
+                        <h3>Próximamente</h3>
+                    </div>
+                    <p class="project-desc">Actualmente me encuentro trabajando en un nuevo e interesante proyecto.
+                        ¡Vuelve pronto para ver las novedades!</p>
+                    <div class="project-card-footer">
+                        <span class="btn-text" style="opacity: 0.6; pointer-events: none;">En desarrollo <span
+                                class="material-symbols-outlined">pending</span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 navimk. Hecho con ❤️ y Material 3 Expressive.</p>
+        <div class="social-links">
+            <!-- GitHub -->
+            <a href="https://github.com/navimk/" target="_blank" class="icon-button" aria-label="GitHub">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+                </svg>
+            </a>
+            <!-- Telegram -->
+            <a href="https://t.me/navatrandom" target="_blank" class="icon-button" aria-label="Telegram">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm4.56 8.37l-1.51 7.1c-.11.49-.4.61-.82.38l-2.3-1.7-1.11 1.07c-.12.12-.22.22-.34.22l.16-2.3 4.2-3.8c.18-.16-.04-.25-.28-.09l-5.19 3.27-2.23-.7c-.49-.15-.5-.49.1-.72l8.71-3.36c.4-.15.75.09.57.83z" />
+                </svg>
+            </a>
+            <!-- Discord -->
+            <a href="https://discord.gg/cYETUsV2wN" target="_blank" class="icon-button" aria-label="Discord">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M19.27 4.73a16.14 16.14 0 0 0-3.97-1.23.08.08 0 0 0-.08.04c-.17.3-.37.72-.51 1.05a14.9 14.9 0 0 0-5.42 0 9.7 9.7 0 0 0-.52-1.05.08.08 0 0 0-.08-.04 16.1 16.1 0 0 0-3.97 1.23.06.06 0 0 0-.03.03A16.17 16.17 0 0 0 1.63 17.7a.07.07 0 0 0 .04.05 16.25 16.25 0 0 0 4.9 2.48.08.08 0 0 0 .08-.03c.39-.53.74-1.09 1.04-1.68a.07.07 0 0 0-.04-.1 10.43 10.43 0 0 1-1.54-.73.08.08 0 0 1-.01-.13c.1-.07.2-.15.3-.22a.08.08 0 0 1 .08-.01c3.21 1.47 6.7 1.47 9.86 0a.08.08 0 0 1 .08.01c.1.07.2.15.3.22a.08.08 0 0 1-.01.13 10.1 10.1 0 0 1-1.54.73.08.08 0 0 0-.04.1c.3.59.65 1.15 1.04 1.68a.08.08 0 0 0 .08.03 16.29 16.29 0 0 0 4.9-2.48.07.07 0 0 0 .04-.05a16.19 16.19 0 0 0-3.64-12.94.06.06 0 0 0-.03-.03zM8.52 14.88c-.97 0-1.77-.89-1.77-1.98s.78-1.98 1.77-1.98c.99 0 1.78.89 1.77 1.98.01 1.09-.78 1.98-1.77 1.98zm6.96 0c-.97 0-1.77-.89-1.77-1.98s.78-1.98 1.77-1.98c.99 0 1.78.89 1.77 1.98.01 1.09-.78 1.98-1.77 1.98z" />
+                </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/navi.mk_/" target="_blank" class="icon-button" aria-label="Instagram">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                </svg>
+            </a>
+            <!-- Email -->
+            <a href="mailto:navimk99@gmail.com" class="icon-button" aria-label="Email">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+            </a>
+            <!-- Cuenta Regresiva 2085 -->
+            <a href="2085.html" class="icon-button" aria-label="Cuenta Regresiva a 2085">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z" />
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Modal para NavOS -->
+    <div id="navos-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <div class="modal-container">
+            <header class="modal-header">
+                <h2 id="modal-title" class="modal-title-text">NavOS 10 (Deprecado)</h2>
+                <button id="modal-close" class="icon-button" aria-label="Cerrar ventana">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </header>
+            <div class="modal-body">
+                <img src="assets/navos.png" alt="Captura de pantalla de NavOS" class="modal-image">
+                <p class="modal-desc">NavOS es una modificación diseñada para eliminar el bloatware, desactivar
+                    telemetría innecesaria y optimizar el rendimiento general del sistema operativo Windows, manteniendo
+                    la estabilidad para juegos y productividad.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="https://drive.google.com/file/d/19fRUJpRM1G9Xa4ak_lUPNnAiTWpc8ICD/view?usp=sharing"
+                    class="btn-primary">
+                    <span class="material-symbols-outlined">download</span>
+                    <span>Descargar ISO</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Nav Tools -->
+    <div id="navtools-modal" class="modal-overlay" aria-hidden="true" role="dialog"
+        aria-labelledby="navtools-modal-title">
+        <div class="modal-container">
+            <header class="modal-header">
+                <h2 id="navtools-modal-title" class="modal-title-text">Nav Tools</h2>
+                <button id="navtools-modal-close" class="icon-button" aria-label="Cerrar ventana">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </header>
+            <div class="modal-body">
+                <img src="assets/navtools.png" alt="Captura de pantalla de Nav Tools" class="modal-image">
+                <p class="modal-desc"><strong>Nav Tools</strong> es una utilidad interactiva desarrollada en Batch (.cmd) que reúne funciones esenciales para poner a punto un sistema Windows recién instalado de forma rápida y sencilla.</p>
+
+                <p class="modal-desc" style="font-weight: 600;">¿Qué puedes hacer con ella?</p>
+                <ul style="margin-left: 20px; color: var(--md-sys-color-on-surface-variant); font-size: 0.95rem; line-height: 1.6; display: flex; flex-direction: column; gap: 8px;">
+                    <li><strong>Instalación de Apps con Winget:</strong> Instala de forma automatizada y en lote programas indispensables como navegadores, reproductores multimedia, editores de código y herramientas del sistema.</li>
+                    <li><strong>Optimización y Privacidad:</strong> Desactiva servicios secundarios innecesarios, telemetría y tareas programadas de recopilación de datos para liberar recursos y mejorar la privacidad.</li>
+                    <li><strong>Limpieza del Sistema:</strong> Elimina de forma rápida archivos temporales, caché del sistema y del navegador, y libera espacio residual en el disco.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

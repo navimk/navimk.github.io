@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/icon.webp">
     <title>Navi</title>
     <!-- Google Fonts and Material Symbols -->
     <link rel="stylesheet"
@@ -23,6 +24,10 @@
     <header class="top-app-bar">
         <div class="top-app-bar__container">
             <span class="top-app-bar__title">Navat</span>
+            <nav class="top-app-bar__nav">
+                <a href="index.html" class="nav-link active">Sobre Mí</a>
+                <a href="proyectos.html" class="nav-link">Proyectos</a>
+            </nav>
             <button id="theme-toggle" class="icon-button" aria-label="Cambiar tema">
                 <span class="material-symbols-outlined">dark_mode</span>
             </button>
@@ -58,8 +63,8 @@
             <h2 class="section-title">¿Quién soy?</h2>
             <p class="about-text">
                 Hola yo soy Elkin, mejor conocido como navi.mk por internet, tengo 19 años, soy de Ecuador y me gusta
-                pasar el tiempo diseñando cosas sencillas y aprendiendo. No busco hacer nada profesional por ahora,
-                disfruto construyendo pequeños proyectos hobby para divertirme y pasar el rato.
+                pasar el tiempo diseñando cosas sencillas y aprendiendo.
+                Disfruto construyendo pequeños proyectos hobby para divertirme y pasar el rato.
             </p>
             <div class="skills-container">
                 <span class="chip">
@@ -89,58 +94,17 @@
             </div>
         </section>
 
-        <!-- Projects Grid Section -->
-        <section class="projects-section">
-            <h2 class="section-title">Mis Pequeños Proyectos</h2>
-            <div class="projects-grid">
-                <!-- Card 1: NavOS -->
-                <div class="project-card">
-                    <div class="project-card-header">
-                        <div class="project-icon-box">
-                            <span class="material-symbols-outlined">desktop_windows</span>
-                        </div>
-                        <h3>NavOS</h3>
-                    </div>
-                    <p class="project-desc">Una modificación personalizada de una ISO de Windows con el bloatware
-                        desactivado y optimizaciones para un mejor rendimiento.</p>
-                    <div class="project-card-footer">
-                        <a href="#" id="open-navos-modal" class="btn-text">Ver proyecto <span
-                                class="material-symbols-outlined">arrow_forward</span></a>
-                    </div>
-                </div>
-
-                <!-- Card 2: Este sitio web -->
-                <div class="project-card">
-                    <div class="project-card-header">
-                        <div class="project-icon-box">
-                            <span class="material-symbols-outlined">language</span>
-                        </div>
-                        <h3>Mi Sitio Web</h3>
-                    </div>
-                    <p class="project-desc">Esta misma página web personal, diseñada desde cero con HTML, CSS puro y
-                        siguiendo la guía de diseño de Material 3.</p>
-                    <div class="project-card-footer">
-                        <a href="https://github.com/navimk/navimk.github.io" class="btn-text">Ver código <span
-                                class="material-symbols-outlined">arrow_forward</span></a>
-                    </div>
-                </div>
-
-                <!-- Card 3: Próximamente -->
-                <div class="project-card">
-                    <div class="project-card-header">
-                        <div class="project-icon-box">
-                            <span class="material-symbols-outlined">construction</span>
-                        </div>
-                        <h3>Próximamente</h3>
-                    </div>
-                    <p class="project-desc">Actualmente me encuentro trabajando en un nuevo e interesante proyecto.
-                        ¡Vuelve pronto para ver las novedades!</p>
-                    <div class="project-card-footer">
-                        <span class="btn-text" style="opacity: 0.6; pointer-events: none;">En desarrollo <span
-                                class="material-symbols-outlined">pending</span></span>
-                    </div>
-                </div>
+        <!-- Projects CTA Card -->
+        <section class="projects-cta-card">
+            <div class="cta-content">
+                <h2 class="section-title">Mis Proyectos</h2>
+                <p class="cta-text">Explora los pequeños proyectos y herramientas que he desarrollado para pasar el
+                    rato, optimizar sistemas y automatizar tareas.</p>
             </div>
+            <a href="proyectos.html" class="btn-primary">
+                <span class="material-symbols-outlined">folder_open</span>
+                <span>Ver Proyectos</span>
+            </a>
         </section>
     </main>
 
@@ -192,31 +156,6 @@
             </a>
         </div>
     </footer>
-
-    <!-- Modal para NavOS -->
-    <div id="navos-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
-        <div class="modal-container">
-            <header class="modal-header">
-                <h2 id="modal-title" class="modal-title-text">NavOS 10 (Alpha)</h2>
-                <button id="modal-close" class="icon-button" aria-label="Cerrar ventana">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
-            </header>
-            <div class="modal-body">
-                <img src="assets/navos.png" alt="Captura de pantalla de NavOS" class="modal-image">
-                <p class="modal-desc">NavOS es una modificación diseñada para eliminar el bloatware, desactivar
-                    telemetría innecesaria y optimizar el rendimiento general del sistema operativo Windows, manteniendo
-                    la estabilidad para juegos y productividad.</p>
-            </div>
-            <div class="modal-footer">
-                <a href="https://drive.google.com/file/d/19fRUJpRM1G9Xa4ak_lUPNnAiTWpc8ICD/view?usp=sharing"
-                    class="btn-primary">
-                    <span class="material-symbols-outlined">download</span>
-                    <span>Descargar ISO</span>
-                </a>
-            </div>
-        </div>
-    </div>
 
     <!-- Modal para Créditos de Foto de Perfil -->
     <div id="pfp-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="pfp-modal-title">

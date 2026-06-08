@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeToggleIcon = themeToggleBtn.querySelector('.material-symbols-outlined');
-    
+
     // Función para establecer el tema y actualizar el icono
     const setTheme = (theme) => {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
-        
+
         // El icono muestra la acción contraria (si está oscuro, ofrece cambiar a claro y viceversa)
         if (theme === 'dark') {
             themeToggleIcon.textContent = 'light_mode';
@@ -16,18 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
             themeToggleBtn.setAttribute('aria-label', 'Cambiar a tema oscuro');
         }
     };
-    
+
     // Inicializar el estado del icono basado en el tema actual (que ya fue aplicado en el head para evitar parpadeos)
     const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
     setTheme(currentTheme);
-    
+
     // Manejar el clic en el botón de alternancia
     themeToggleBtn.addEventListener('click', () => {
         const activeTheme = document.documentElement.getAttribute('data-theme');
         const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
         setTheme(newTheme);
     });
-    
+
     // Escuchar cambios en la preferencia del sistema
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
         // Solo cambiamos automáticamente si el usuario no ha elegido manualmente un tema preferido
@@ -36,49 +36,51 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- LÓGICA DEL MODAL FLOTANTE (NavOS) ---
-    const openModalBtn = document.getElementById('open-navos-modal');
-    const modal = document.getElementById('navos-modal');
-    const closeModalBtn = document.getElementById('modal-close');
+    // --- LÓGICA DE MODALES DE PROYECTOS ---
+    const setupProjectModal = (openBtnId, modalId, closeBtnId) => {
+        const openBtn = document.getElementById(openBtnId);
+        const modal = document.getElementById(modalId);
+        const closeBtn = document.getElementById(closeBtnId);
 
-    if (openModalBtn && modal) {
-        // Abrir modal
-        const openModal = (e) => {
-            e.preventDefault();
-            modal.classList.add('is-open');
-            modal.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden'; // Evitar scroll de fondo
-            if (closeModalBtn) closeModalBtn.focus();
-        };
+        if (openBtn && modal) {
+            const openModal = (e) => {
+                e.preventDefault();
+                modal.classList.add('is-open');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+                if (closeBtn) closeBtn.focus();
+            };
 
-        // Cerrar modal
-        const closeModal = () => {
-            modal.classList.remove('is-open');
-            modal.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = ''; // Restaurar scroll
-            openModalBtn.focus();
-        };
+            const closeModal = () => {
+                modal.classList.remove('is-open');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+                openBtn.focus();
+            };
 
-        openModalBtn.addEventListener('click', openModal);
+            openBtn.addEventListener('click', openModal);
 
-        if (closeModalBtn) {
-            closeModalBtn.addEventListener('click', closeModal);
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeModal);
+            }
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+                    closeModal();
+                }
+            });
         }
+    };
 
-        // Cerrar al hacer clic en el fondo oscuro
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
+    setupProjectModal('open-navos-modal', 'navos-modal', 'modal-close');
+    setupProjectModal('open-navtools-modal', 'navtools-modal', 'navtools-modal-close');
 
-        // Cerrar con la tecla Escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('is-open')) {
-                closeModal();
-            }
-        });
-    }
 
     // --- LÓGICA DEL MODAL FLOTANTE (Créditos Avatar) ---
     const openPfpModalBtn = document.querySelector('.profile-blob');
