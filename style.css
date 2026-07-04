@@ -278,7 +278,7 @@ h4 {
 .profile-blob {
     width: 160px;
     height: 160px;
-    background: var(--md-sys-color-primary-container) url('assets/eros-1.png') center/cover no-repeat;
+    background: var(--md-sys-color-primary-container) url('assets/eros1.png') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -306,7 +306,7 @@ h4 {
 }
 
 [data-theme="dark"] .profile-blob {
-    background-image: url('assets/eros-2.png');
+    background-image: url('assets/eros2.png');
 }
 
 @keyframes blob-morph {
