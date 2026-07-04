@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- LÓGICA DE MODALES DE PROYECTOS ---
-    const setupProjectModal = (openBtnId, modalId, closeBtnId) => {
-        const openBtn = document.getElementById(openBtnId);
+    // --- LÓGICA DE MODALES (Unificada) ---
+    const setupModal = (openSelector, modalId, closeBtnId) => {
+        const openBtn = document.querySelector(openSelector);
         const modal = document.getElementById(modalId);
         const closeBtn = document.getElementById(closeBtnId);
 
@@ -60,16 +60,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
             openBtn.addEventListener('click', openModal);
 
+            // Soporte de teclado (Enter / Espacio) para elementos interactivos no nativos (como el div .profile-blob)
+            if (openBtn.tagName !== 'BUTTON' && openBtn.tagName !== 'A') {
+                openBtn.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        openModal(e);
+                    }
+                });
+            }
+
             if (closeBtn) {
                 closeBtn.addEventListener('click', closeModal);
             }
 
+            // Cerrar al hacer clic en el fondo oscuro del modal
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
                     closeModal();
                 }
             });
 
+            // Cerrar con la tecla Escape
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && modal.classList.contains('is-open')) {
                     closeModal();
@@ -78,58 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    setupProjectModal('open-navos-modal', 'navos-modal', 'modal-close');
-    setupProjectModal('open-navtools-modal', 'navtools-modal', 'navtools-modal-close');
-
-
-    // --- LÓGICA DEL MODAL FLOTANTE (Créditos Avatar) ---
-    const openPfpModalBtn = document.querySelector('.profile-blob');
-    const pfpModal = document.getElementById('pfp-modal');
-    const closePfpModalBtn = document.getElementById('pfp-modal-close');
-
-    if (openPfpModalBtn && pfpModal) {
-        // Abrir modal
-        const openModal = (e) => {
-            if (e) e.preventDefault();
-            pfpModal.classList.add('is-open');
-            pfpModal.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden'; // Evitar scroll de fondo
-            if (closePfpModalBtn) closePfpModalBtn.focus();
-        };
-
-        // Cerrar modal
-        const closeModal = () => {
-            pfpModal.classList.remove('is-open');
-            pfpModal.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = ''; // Restaurar scroll
-            openPfpModalBtn.focus();
-        };
-
-        openPfpModalBtn.addEventListener('click', openModal);
-
-        // Soporte de accesibilidad por teclado (Enter o Espacio)
-        openPfpModalBtn.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                openModal(e);
-            }
-        });
-
-        if (closePfpModalBtn) {
-            closePfpModalBtn.addEventListener('click', closeModal);
-        }
-
-        // Cerrar al hacer clic en el fondo oscuro
-        pfpModal.addEventListener('click', (e) => {
-            if (e.target === pfpModal) {
-                closeModal();
-            }
-        });
-
-        // Cerrar con la tecla Escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && pfpModal.classList.contains('is-open')) {
-                closeModal();
-            }
-        });
-    }
+    // Inicializar modales
+    setupModal('#open-navos-modal', 'navos-modal', 'modal-close');
+    setupModal('#open-navtools-modal', 'navtools-modal', 'navtools-modal-close');
+    setupModal('.profile-blob', 'pfp-modal', 'pfp-modal-close');
 });
