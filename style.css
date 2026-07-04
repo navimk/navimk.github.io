@@ -1,45 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
+@font-face {
+    font-family: 'GenoThetaEx';
+    src: url('assets/GENOTHETAEX.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     /* Fonts */
     --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
     --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 
-    /* Light Theme (Material 3 Expressive) */
-    --md-sys-color-primary: #23857a;
+    --md-sys-color-primary: #343f72;
     --md-sys-color-on-primary: #FFFFFF;
-    --md-sys-color-primary-container: #a7e2dd;
-    --md-sys-color-on-primary-container: #092942;
+    --md-sys-color-primary-container: #7a84c1;
+    --md-sys-color-on-primary-container: #151a32;
 
-    --md-sys-color-secondary: #134859;
+    --md-sys-color-secondary: #6b3f3e;
     --md-sys-color-on-secondary: #FFFFFF;
-    --md-sys-color-secondary-container: #e2f2f1;
-    --md-sys-color-on-secondary-container: #134859;
+    --md-sys-color-secondary-container: #d6937e;
+    --md-sys-color-on-secondary-container: #6b3f3e;
 
-    --md-sys-color-tertiary: #27b095;
+    --md-sys-color-tertiary: #ff715d;
     --md-sys-color-on-tertiary: #FFFFFF;
-    --md-sys-color-tertiary-container: #63fabe;
-    --md-sys-color-on-tertiary-container: #092942;
+    --md-sys-color-tertiary-container: #ff9b25;
+    --md-sys-color-on-tertiary-container: #151a32;
 
-    --md-sys-color-background: #f4faf9;
-    --md-sys-color-on-background: #092942;
+    --md-sys-color-background: #dedefc;
+    --md-sys-color-on-background: #151a32;
 
-    --md-sys-color-surface: #f7fcfb;
-    --md-sys-color-on-surface: #092942;
-    --md-sys-color-surface-variant: #dbeceb;
-    --md-sys-color-on-surface-variant: #134859;
-    --md-sys-color-outline: #23857a;
-    --md-sys-color-outline-variant: #a7e2dd;
+    --md-sys-color-surface: #f4f4ff;
+    --md-sys-color-on-surface: #151a32;
+    --md-sys-color-surface-variant: #e2e2fa;
+    --md-sys-color-on-surface-variant: #343f72;
+    --md-sys-color-outline: #343f72;
+    --md-sys-color-outline-variant: #7a84c1;
 
     --md-sys-color-surface-container-lowest: #FFFFFF;
-    --md-sys-color-surface-container-low: #f0f8f7;
-    --md-sys-color-surface-container: #eaf4f3;
-    --md-sys-color-surface-container-high: #e4f1f0;
-    --md-sys-color-surface-container-highest: #d8eceb;
+    --md-sys-color-surface-container-low: #f0f0ff;
+    --md-sys-color-surface-container: #e5e5fd;
+    --md-sys-color-surface-container-high: #dedefc;
+    --md-sys-color-surface-container-highest: #c5c5eb;
 
-    --accent-glow: rgba(35, 133, 122, 0.12);
-    --card-shadow: 0 4px 16px rgba(35, 133, 122, 0.06);
-    --card-shadow-hover: 0 16px 32px rgba(35, 133, 122, 0.15);
+    --accent-glow: rgba(52, 63, 114, 0.12);
+    --card-shadow: 0 4px 16px rgba(21, 26, 50, 0.08);
+    --card-shadow-hover: 0 16px 32px rgba(21, 26, 50, 0.15);
 
     /* Animation Transitions */
     --transition-fast: 0.2s cubic-bezier(0.2, 0, 0, 1);
@@ -48,41 +54,41 @@
 }
 
 [data-theme="dark"] {
-    /* Dark Theme (Material 3 Expressive) */
-    --md-sys-color-primary: #25e58b;
-    --md-sys-color-on-primary: #092942;
-    --md-sys-color-primary-container: #12575a;
-    --md-sys-color-on-primary-container: #63fabe;
 
-    --md-sys-color-secondary: #3eddb4;
-    --md-sys-color-on-secondary: #092942;
-    --md-sys-color-secondary-container: #134859;
-    --md-sys-color-on-secondary-container: #a7e2dd;
+    --md-sys-color-primary: #fdac46;
+    --md-sys-color-on-primary: #151a32;
+    --md-sys-color-primary-container: #343f72;
+    --md-sys-color-on-primary-container: #dedefc;
 
-    --md-sys-color-tertiary: #63fabe;
-    --md-sys-color-on-tertiary: #092942;
-    --md-sys-color-tertiary-container: #23857a;
-    --md-sys-color-on-tertiary-container: #a7e2dd;
+    --md-sys-color-secondary: #7a84c1;
+    --md-sys-color-on-secondary: #151a32;
+    --md-sys-color-secondary-container: #242c52;
+    --md-sys-color-on-secondary-container: #dedefc;
 
-    --md-sys-color-background: #092942;
-    --md-sys-color-on-background: #eaf4f3;
+    --md-sys-color-tertiary: #ff715d;
+    --md-sys-color-on-tertiary: #151a32;
+    --md-sys-color-tertiary-container: #6b3f3e;
+    --md-sys-color-on-tertiary-container: #ff715d;
 
-    --md-sys-color-surface: #0d324f;
-    --md-sys-color-on-surface: #eaf4f3;
-    --md-sys-color-surface-variant: #134859;
-    --md-sys-color-on-surface-variant: #a7e2dd;
-    --md-sys-color-outline: #27b095;
-    --md-sys-color-outline-variant: #134859;
+    --md-sys-color-background: #151a32;
+    --md-sys-color-on-background: #dedefc;
 
-    --md-sys-color-surface-container-lowest: #061d30;
-    --md-sys-color-surface-container-low: #082339;
-    --md-sys-color-surface-container: #0a2c47;
-    --md-sys-color-surface-container-high: #0d3452;
-    --md-sys-color-surface-container-highest: #113f63;
+    --md-sys-color-surface: #1b213e;
+    --md-sys-color-on-surface: #dedefc;
+    --md-sys-color-surface-variant: #343f72;
+    --md-sys-color-on-surface-variant: #7a84c1;
+    --md-sys-color-outline: #7a84c1;
+    --md-sys-color-outline-variant: #343f72;
 
-    --accent-glow: rgba(37, 229, 139, 0.15);
+    --md-sys-color-surface-container-lowest: #0e1122;
+    --md-sys-color-surface-container-low: #12162a;
+    --md-sys-color-surface-container: #1b213e;
+    --md-sys-color-surface-container-high: #242c52;
+    --md-sys-color-surface-container-highest: #2d3766;
+
+    --accent-glow: rgba(253, 172, 70, 0.15);
     --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    --card-shadow-hover: 0 16px 36px rgba(37, 229, 139, 0.25);
+    --card-shadow-hover: 0 16px 36px rgba(253, 172, 70, 0.25);
 }
 
 /* Reset and Base Styles */
@@ -139,10 +145,10 @@ h4 {
 }
 
 .top-app-bar__title {
-    font-family: var(--font-display);
-    font-size: 1.35rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+    font-family: 'GenoThetaEx', var(--font-display);
+    font-size: 2.5rem;
+    font-weight: normal;
+    letter-spacing: normal;
     background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -272,7 +278,7 @@ h4 {
 .profile-blob {
     width: 160px;
     height: 160px;
-    background: var(--md-sys-color-primary-container) url('assets/pfp1.jpg') center/cover no-repeat;
+    background: var(--md-sys-color-primary-container) url('assets/eros-1.png') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -300,7 +306,7 @@ h4 {
 }
 
 [data-theme="dark"] .profile-blob {
-    background-image: url('assets/pfp2.jpg');
+    background-image: url('assets/eros-2.png');
 }
 
 @keyframes blob-morph {

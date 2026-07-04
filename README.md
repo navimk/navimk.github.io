@@ -1,4 +1,5 @@
-# Insane Navat Page
-Diseñado con Material 3 expressive
+# Insane Navi.mk Page
 
-Hecho con <3 y ayuda de gemini 
+This repository contains my small website with information about me
+
+Made with <3 
