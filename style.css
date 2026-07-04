@@ -374,6 +374,11 @@ h1, h2, h3, h4 {
 .about-card {
     padding: 36px;
 }
+.about-card img {
+    max-width: 100%;
+    height: auto;
+    display: block; 
+}
 
 .section-title {
     font-size: 1.85rem;
@@ -778,4 +783,36 @@ h1, h2, h3, h4 {
         display: flex;
         gap: 16px;
     }
+}
+
+    .egg {
+      display: none; /* Oculto por defecto */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;  
+      height: 100vh; 
+      background-color: rgba(0, 0, 0, 0.2); 
+      z-index: 1000;
+      overflow: hidden; 
+    }
+
+    /* dvd */
+    #eros-dvd {
+      position: absolute;
+      width: 80px;
+      height: 70px;
+      user-select: none;
+    }
+
+.hello, .test{
+    font-family: 'GenoThetaEx', var(--font-display);
+    font-size: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.minieros{
+    width: 100%;
+  height: auto;
 }

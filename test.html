@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <title>Test</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+        // Aplicar tema inmediatamente para evitar parpadeo blanco/oscuro en la carga
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', initialTheme);
+    </script>
+</head>
+<body>
+<!-- Top App Bar -->
+    <header class="top-app-bar">
+        <div class="top-app-bar__container">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <a href="index.html" class="icon-button" aria-label="Volver al inicio" style="text-decoration: none;">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </a>
+                <span class="top-app-bar__title">Testing</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+    <section class="projects-cta-card">
+        <div class="cta-content">
+          <h1 class="test">Test</h1>
+  <p>Pagina para testear cosas</p>
+  <p>Si ves esto pues hola, aunq no deberias estar aca</p>
+  <p>como se supone que esto no se debe ver, no me digas que hay cosas desalineadas </p>
+</div>
+<a class="btn-primary" onclick="erosegg()">
+        <span>eros esteregg</span>
+    </a>
+    <a class="btn-primary" href="hola.html">
+        <span>Hola</span>
+    </a>
+    </section>
+    </main>
+
+
+  <!-- egg -->
+  <div id="ventana-emergente" class="egg">
+    <a class="btn-primary" onclick="byeros()"><span>X</span></a>
+    <div id="eros-dvd"><img class="minieros" src="assets/tinyeros.PNG"></div>
+  </div>
+<script src="egg.js"></script>
+
+</body>
+</html>
