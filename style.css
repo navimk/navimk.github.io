@@ -842,7 +842,7 @@ h4 {
 @media (max-width: 768px) {
     .projects-cta-card {
         flex-direction: column;
-        text-align: center;
+        align-items: flex-start;
         gap: 28px;
     }
 }
