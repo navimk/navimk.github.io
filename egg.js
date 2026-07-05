@@ -16,13 +16,22 @@ const popup = document.getElementById('ventana-emergente');
       x += vX;
       y += vY;
 
-      if (x >= limiteX || x <= 0) {
-        vX *= -1;
-      }
 
-      if (y >= limiteY || y <= 0) {
-        vY *= -1;
-      }
+  if (x >= limiteX) {
+    x = limiteX; 
+    vX *= -1;
+  } else if (x <= 0) {
+    x = 0; 
+    vX *= -1;
+  }
+
+  if (y >= limiteY) {
+    y = limiteY; 
+    vY *= -1;
+  } else if (y <= 0) {
+    y = 0; 
+    vY *= -1;
+  }
 
       logo.style.left = x + 'px';
       logo.style.top = y + 'px';
