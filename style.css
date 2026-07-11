@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
 @font-face {
     font-family: 'GenoThetaEx';
     src: url('assets/GENOTHETAEX.ttf') format('truetype');
@@ -7,10 +7,11 @@
     font-style: normal;
 }
 
+
 :root {
     /* Fonts */
     --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
-    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif ;
 
     /* Core Palette - Light */
     --md-sys-color-primary: #343f72;
@@ -135,7 +136,6 @@ h1, h2, h3, h4 {
 .countdown-card,
 .projects-cta-card {
     background-color: var(--md-sys-color-surface-container);
-    box-shadow: var(--card-shadow);
 
     &:hover {
         transform: translateY(-4px);
@@ -173,6 +173,7 @@ h1, h2, h3, h4 {
         font-weight: normal;
         letter-spacing: normal;
         background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary));
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
 
@@ -424,17 +425,6 @@ h1, h2, h3, h4 {
     font-weight: 600;
     color: var(--md-sys-color-on-surface);
     cursor: default;
-
-    &:hover {
-        background-color: var(--md-sys-color-primary-container);
-        border-color: var(--md-sys-color-primary);
-        color: var(--md-sys-color-on-primary-container);
-        transform: translateY(-2px);
-
-        .chip-icon {
-            color: var(--md-sys-color-on-primary-container);
-        }
-    }
 
     .chip-icon {
         font-size: 1.25rem;
@@ -692,6 +682,7 @@ h1, h2, h3, h4 {
         font-weight: 800;
         margin-bottom: 8px;
         background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary));
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -811,13 +802,14 @@ h1, h2, h3, h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-weight: 200;
 }
 .minieros{
     width: 120px;
   height: auto;
 }
-
-.bleh{
+/*close button*/
+.btn-egg{
     position: fixed;
     top: 20px;    
     right: 20px; 
