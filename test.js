@@ -27,8 +27,19 @@
   function cambiarTexto() {
     // Genera un índice aleatorio entre 0 y el largo del arreglo
     const indiceAleatorio = Math.floor(Math.random() * frases.length);
-    // Reemplaza el contenido del elemento HTML con la frase seleccionada
-    document.getElementById("texto-dinamico").textContent = frases[indiceAleatorio];
+    const frase = frases[indiceAleatorio];
+
+    // Reemplaza el contenido en la burbuja si existe
+    const elementoBurbuja = document.getElementById("texto-dinamico-burbuja");
+    if (elementoBurbuja) {
+      elementoBurbuja.textContent = frase;
     }
-    window.onload = cambiarTexto;
+
+    // Reemplaza el contenido en la sección de pruebas si existe
+    const elementoFrase = document.getElementById("texto-dinamico");
+    if (elementoFrase) {
+      elementoFrase.textContent = frase;
+    }
+  }
+  window.onload = cambiarTexto;
     
