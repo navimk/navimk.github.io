@@ -838,15 +838,6 @@ h1, h2, h3, h4 {
     z-index: 10;
     animation: bubble-float 3s ease-in-out infinite alternate;
     transition: transform var(--transition-fast), background-color var(--transition-medium), border-color var(--transition-medium);
-
-    @media (max-width: 768px) {
-        bottom: 175px;
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
-        border-radius: 20px 20px 20px 20px;
-        animation: bubble-float-mobile 3s ease-in-out infinite alternate;
-    }
 }
 
 /* Tail for speech bubble */
@@ -863,18 +854,30 @@ h1, h2, h3, h4 {
     transform: rotate(-45deg);
     z-index: -1;
     transition: background-color var(--transition-medium), border-color var(--transition-medium);
+}
 
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
+
+    .speech-bubble {
+        bottom: 175px;
         left: 50%;
         right: auto;
-        margin-left: -8px;
-        /* center the tail */
-        bottom: -9px;
-        border-bottom: 1px solid var(--md-sys-color-outline-variant);
-        border-left: 1px solid var(--md-sys-color-outline-variant);
-        transform: rotate(-45deg);                
+        transform: translateX(-50%);
+        border-radius: 20px 20px 20px 20px;
+        animation: bubble-float-mobile 3s ease-in-out infinite alternate;
     }
-}
+
+            .speech-bubble::after {
+                left: 50%;
+                right: auto;
+                margin-left: -8px;
+                /* center the tail */
+                bottom: -9px;
+                border-bottom: 1px solid var(--md-sys-color-outline-variant);
+                border-left: 1px solid var(--md-sys-color-outline-variant);
+                transform: rotate(-45deg);
+            }
+        }
 
 @keyframes bubble-float {
     0% {
