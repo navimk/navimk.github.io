@@ -16,98 +16,7 @@
         const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
         document.documentElement.setAttribute('data-theme', initialTheme);
     </script>
-    <style>
-        /* Speech Bubble Styling */
-        .profile-avatar-container {
-            position: relative;
-        }
 
-        .speech-bubble {
-            position: absolute;
-            bottom: 120px;
-            right: 130px;
-            background-color: var(--md-sys-color-surface-container-high);
-            color: var(--md-sys-color-on-surface);
-            border: 1px solid var(--md-sys-color-outline-variant);
-            padding: 12px 18px;
-            border-radius: 20px 20px 20px 20px;
-            box-shadow: var(--card-shadow);
-            font-size: 0.95rem;
-            font-family: var(--font-body);
-            font-weight: 600;
-            max-width: 240px;
-            width: max-content;
-            min-width: 140px;
-            line-height: 1.4;
-            z-index: 10;
-            animation: bubble-float 3s ease-in-out infinite alternate;
-            transition: transform var(--transition-fast), background-color var(--transition-medium), border-color var(--transition-medium);
-        }
-
-        /* Tail for speech bubble */
-        .speech-bubble::after {
-            content: '';
-            position: absolute;
-            bottom: -9px;
-            right: 20px;
-            width: 16px;
-            height: 16px;
-            background-color: var(--md-sys-color-surface-container-high);
-            border-bottom: 1px solid var(--md-sys-color-outline-variant);
-            border-left: 1px solid var(--md-sys-color-outline-variant);
-            transform: rotate(-45deg);
-            z-index: -1;
-            transition: background-color var(--transition-medium), border-color var(--transition-medium);
-        }
-
-        @keyframes bubble-float {
-            0% {
-                transform: translateY(0px);
-            }
-
-            100% {
-                transform: translateY(-6px);
-            }
-        }
-
-        /* Mobile styles */
-        @media (max-width: 768px) {
-            .hero-section {
-                margin-top: 72px;
-                /* Margen extra en móvil para que el globo no choque con la barra superior */
-            }
-
-            .speech-bubble {
-                bottom: 175px;
-                left: 50%;
-                right: auto;
-                transform: translateX(-50%);
-                border-radius: 20px 20px 20px 20px;
-                animation: bubble-float-mobile 3s ease-in-out infinite alternate;
-            }
-
-            .speech-bubble::after {
-                left: 50%;
-                right: auto;
-                margin-left: -8px;
-                /* center the tail */
-                bottom: -9px;
-                border-bottom: 1px solid var(--md-sys-color-outline-variant);
-                border-left: 1px solid var(--md-sys-color-outline-variant);
-                transform: rotate(-45deg);
-            }
-        }
-
-        @keyframes bubble-float-mobile {
-            0% {
-                transform: translateX(-50%) translateY(0px);
-            }
-
-            100% {
-                transform: translateX(-50%) translateY(-6px);
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -155,7 +64,7 @@
         <!--Test#1 ester egg-->
         <section class="projects-cta-card">
             <div class="cta-content">
-                <h1 class="test">Test</h1>
+                <h1 class="test section-title">Test</h1>
                 <p>Pagina para testear cosas</p>
                 <p>Si ves esto pues hola, aunq no deberias estar aca</p>
                 <p>como se supone que esto no se debe ver, no me digas que hay cosas desalineadas </p>
@@ -227,7 +136,7 @@
     <!-- JS Scripts -->
     <script src="egg.js"></script>
     <script src="script.js"></script>
-    <script src="test.js"></script>
+    <script src="frases.js"></script>
 </body>
 
 </html>

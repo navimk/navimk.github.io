@@ -22,7 +22,8 @@
     "Don't look at me, don't look at me, I'm just too dumb",
     "Soy un desastre escribiendo codigo",
     "Salchipapa con queso y mostaza 🗣️",
-    "🫪🫪🫪🫪🫪🫪🫪🫪🫪🫪🫪🫪🫪🫪"
+    "🫪🫪🫪🫪🫪🫪🫪🫪🫪🫪🫪🫪🫪🫪",
+    "¿Alguien vera esto?"
     ];
   function cambiarTexto() {
     // Genera un índice aleatorio entre 0 y el largo del arreglo

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
 @font-face {
     font-family: 'GenoThetaEx';
     src: url('assets/GENOTHETAEX.ttf') format('truetype');
@@ -264,14 +263,16 @@ h1, h2, h3, h4 {
     display: flex;
     gap: 40px;
     align-items: center;
-    margin-top: 16px;
+    margin-top: 40px;
 
     @media (max-width: 768px) {
+        margin-top: 72px;
         flex-direction: column;
         text-align: center;
         gap: 28px;
     }
 }
+
 
 .profile-avatar-container {
     position: relative;
@@ -382,7 +383,6 @@ h1, h2, h3, h4 {
 }
 
 .section-title {
-    font-size: 1.85rem;
     font-weight: 700;
     margin-bottom: 20px;
     position: relative;
@@ -801,7 +801,6 @@ h1, h2, h3, h4 {
     font-size: 5rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
     font-weight: 200;
 }
 .minieros{
@@ -816,4 +815,79 @@ h1, h2, h3, h4 {
     z-index: 1000; 
     padding: 10px 20px;
     cursor: pointer;
+}
+
+/* Speech Bubble Styling */
+.speech-bubble {
+    position: absolute;
+    bottom: 160px;
+    left: 110px;
+    background-color: var(--md-sys-color-surface-container-high);
+    color: var(--md-sys-color-on-surface);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    padding: 12px 18px;
+    border-radius: 20px 20px 20px 4px;
+     box-shadow: var(--card-shadow);
+    font-size: 0.95rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    max-width: 240px;
+    width: max-content;
+    min-width: 140px;
+    line-height: 1.4;
+    z-index: 10;
+    animation: bubble-float 3s ease-in-out infinite alternate;
+    transition: transform var(--transition-fast), background-color var(--transition-medium), border-color var(--transition-medium);
+
+    @media (max-width: 768px) {
+        bottom: 175px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        border-radius: 20px 20px 20px 20px;
+        animation: bubble-float-mobile 3s ease-in-out infinite alternate;
+    }
+}
+
+/* Tail for speech bubble */
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    left: 10px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--md-sys-color-surface-container-high);
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+    border-left: 1px solid var(--md-sys-color-outline-variant);
+    transform: rotate(-45deg);
+    z-index: -1;
+    transition: background-color var(--transition-medium), border-color var(--transition-medium);
+
+    @media (max-width: 768px) {
+        left: 50%;
+        right: auto;
+        margin-left: -8px;
+        /* center the tail */
+        bottom: -9px;
+        border-bottom: 1px solid var(--md-sys-color-outline-variant);
+        border-left: 1px solid var(--md-sys-color-outline-variant);
+        transform: rotate(-45deg);                
+    }
+}
+
+@keyframes bubble-float {
+    0% {
+        transform: translateY(0px);
+    }100% {
+        transform: translateY(-6px);
+    }
+}
+
+@keyframes bubble-float-mobile {
+    0% {
+        transform: translateX(-50%) translateY(0px);
+    }100% {
+        transform: translateX(-50%) translateY(-6px);
+    }
 }
