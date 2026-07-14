@@ -23,7 +23,8 @@
     "Soy un desastre escribiendo codigo",
     "Salchipapa con queso y mostaza 🗣️",
     "🫪🫪🫪🫪🫪🫪🫪🫪🫪🫪🫪🫪🫪🫪",
-    "¿Alguien vera esto?"
+    "¿Alguien vera esto?",
+    "Pepo Puto 😾"
     ];
   function cambiarTexto() {
     // Genera un índice aleatorio entre 0 y el largo del arreglo
