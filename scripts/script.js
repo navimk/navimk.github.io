@@ -89,9 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Inicializar modales
-    setupModal('#open-navos-modal', 'navos-modal', 'modal-close');
-    setupModal('#open-navtools-modal', 'navtools-modal', 'navtools-modal-close');
-    setupModal('#open-secret-modal', 'secret-modal', 'secret-modal-close');
+    // Inicializar modales estáticos
     setupModal('.profile-blob', 'pfp-modal', 'pfp-modal-close');
 });

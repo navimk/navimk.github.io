@@ -1,0 +1,75 @@
+/* Countdown Styles (2085.html) */
+.countdown-section {
+    display: flex; justify-content: center; align-items: center; margin: auto 0; min-height: 50vh;
+}
+.countdown-card {
+    padding: 48px 36px; text-align: center; width: 100%; max-width: 600px; margin: 0 auto;
+    .countdown-title {
+        font-size: 2.25rem; font-weight: 800; margin-bottom: 8px;
+        background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary));
+        background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .countdown-subtitle { font-size: 1.1rem; color: var(--md-sys-color-on-surface-variant); margin-bottom: 36px; }
+}
+.countdown-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+    @media (max-width: 550px) { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
+.bloque-tiempo {
+    background-color: var(--md-sys-color-surface-container-high); border: 1px solid var(--md-sys-color-outline-variant);
+    padding: 20px 12px; border-radius: 20px; text-align: center;
+    transition: transform var(--transition-fast), background-color var(--transition-fast);
+    &:hover {
+        background-color: var(--md-sys-color-primary-container); transform: scale(1.05);
+        .numero, .etiqueta { color: var(--md-sys-color-on-primary-container); }
+    }
+    .numero {
+        display: block; font-family: var(--font-display); font-size: 3rem; font-weight: 800;
+        color: var(--md-sys-color-primary); line-height: 1.1; margin-bottom: 4px; transition: color var(--transition-fast);
+    }
+    .etiqueta {
+        font-family: var(--font-body); font-size: 0.85rem; font-weight: 600; text-transform: uppercase;
+        letter-spacing: 1px; color: var(--md-sys-color-on-surface-variant); transition: color var(--transition-fast);
+    }
+}
+.final-message { font-size: 1.75rem; color: var(--md-sys-color-tertiary); font-weight: 700; margin-top: 24px; }
+
+/* Easter Egg Styles (test.html, hola.html) */
+.egg {
+    display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2); z-index: 1000; overflow: hidden;
+}
+#fifi-dvd { position: absolute; width: 80px; height: 70px; user-select: none; }
+.hello, .test {
+    font-family: 'GenoThetaEx', var(--font-display); font-size: 5rem;
+    display: flex; flex-direction: column; font-weight: 200;
+}
+.minififi { width: 120px; height: auto; }
+.btn-egg { position: fixed; top: 20px; right: 20px; z-index: 1000; padding: 10px 20px; cursor: pointer; }
+
+/* Speech Bubble Styling (index.html, test.html) */
+.speech-bubble {
+    position: absolute; bottom: 160px; left: 110px;
+    background-color: var(--md-sys-color-surface-container-high); color: var(--md-sys-color-on-surface);
+    border: 1px solid var(--md-sys-color-outline-variant); padding: 12px 18px; border-radius: 20px 20px 20px 4px;
+    box-shadow: var(--card-shadow); font-size: 0.95rem; font-family: var(--font-body); font-weight: 600;
+    max-width: 240px; width: max-content; min-width: 140px; line-height: 1.4; z-index: 10;
+    animation: bubble-float 3s ease-in-out infinite alternate;
+    transition: transform var(--transition-fast), background-color var(--transition-medium), border-color var(--transition-medium);
+}
+.speech-bubble::after {
+    content: ''; position: absolute; bottom: -9px; left: 10px; width: 16px; height: 16px;
+    background-color: var(--md-sys-color-surface-container-high);
+    border-bottom: 1px solid var(--md-sys-color-outline-variant); border-left: 1px solid var(--md-sys-color-outline-variant);
+    transform: rotate(-45deg); z-index: -1;
+    transition: background-color var(--transition-medium), border-color var(--transition-medium);
+}
+@media (max-width: 768px) {
+    .speech-bubble {
+        bottom: 175px; left: 50%; right: auto; transform: translateX(-50%);
+        border-radius: 20px 20px 20px 20px; animation: bubble-float-mobile 3s ease-in-out infinite alternate;
+    }
+    .speech-bubble::after { left: 50%; right: auto; margin-left: -8px; bottom: -9px; transform: rotate(-45deg); }
+}
+@keyframes bubble-float { 0% { transform: translateY(0px); } 100% { transform: translateY(-6px); } }
+@keyframes bubble-float-mobile { 0% { transform: translateX(-50%) translateY(0px); } 100% { transform: translateX(-50%) translateY(-6px); } }
